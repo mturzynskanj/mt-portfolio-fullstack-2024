@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "globals": {
+    // react is global object so it doesnt have to individually imported to each file
+    "React": "readonly"
+  },
+  // the no-used-vars will be ignored if you preceed the name of the var with _
+  "rules": {
+    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
+  }
 }
